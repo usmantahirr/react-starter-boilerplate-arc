@@ -23,7 +23,7 @@ const Wrapper = styled.span`
 `
 
 const Icon = ({ icon, ...props }) => {
-  const svg = require(`raw!./icons/${icon}.svg`)
+  const svg = require(`raw-loader!./icons/${icon}.svg`)
   return <Wrapper {...props} dangerouslySetInnerHTML={{ __html: svg }} />
 }
 
@@ -31,7 +31,7 @@ Icon.propTypes = {
   icon: PropTypes.string.isRequired,
   height: PropTypes.number,
   palette: PropTypes.string,
-  reverse: PropTypes.bool
+  reverse: PropTypes.bool,
 }
 
 export default Icon
